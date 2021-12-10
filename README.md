@@ -1,2 +1,2 @@
-# Tg_assisatnt
+# Tg_assistant
 telegram bot
