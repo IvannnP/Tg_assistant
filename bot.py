@@ -53,7 +53,7 @@ def bot_message(message):
                 menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week013'))
                 menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week014'))
 
-                bot.send_message(message.chat.id, text='Выберите дату,текущего месяца', reply_markup=menu1)
+                bot.send_message(message.chat.id, text='Выберите учебный период текущего месяца', reply_markup=menu1)
 
 
 
@@ -64,7 +64,7 @@ def bot_message(message):
                 menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week023'))
                 menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week024'))
 
-                bot.send_message(message.chat.id, text='Выберите дату,текущего месяца', reply_markup=menu1)
+                bot.send_message(message.chat.id, text='Выберите учебный период текущего месяца', reply_markup=menu1)
 
 
 
@@ -75,7 +75,7 @@ def bot_message(message):
                 menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week033'))
                 menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week034'))
 
-                bot.send_message(message.chat.id, text='Выберите дату,текущего месяца', reply_markup=menu1)
+                bot.send_message(message.chat.id, text='Выберите учебный период текущего месяца', reply_markup=menu1)
 
 
 
@@ -86,7 +86,7 @@ def bot_message(message):
                 menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week043'))
                 menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week044'))
 
-                bot.send_message(message.chat.id, text='Выберите дату,текущего месяца', reply_markup=menu1)
+                bot.send_message(message.chat.id, text='Выберите учебный период текущего месяца', reply_markup=menu1)
 
 
 
@@ -97,57 +97,105 @@ def bot_message(message):
                 menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week053'))
                 menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week054'))
 
-                bot.send_message(message.chat.id, text='Выберите дату,текущего месяца', reply_markup=menu1)
+                bot.send_message(message.chat.id, text='Выберите учебный период текущего месяца', reply_markup=menu1)
 
         @bot.callback_query_handler(func=lambda call: True)
         def step1(call):
+
+            #Математический анализ
                     if call.data == 'week011':
-                            bot.send_message(message.chat.id, text='Задание')
+                            bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 1 по 5 число')
+                            bot.send_message(message.chat.id, text='Тема "Формула Тейлора" (старый номер 10).')
+                            bot.send_message(message.chat.id, text='Тема 10: 15.4, 17, 1.4, 1.6, 1.8, 3.10, 3.12, 3.13, 4.5, 4.6, 4.7, 4.8, 5.4, 5.6, 6, 7.4, 11.Б, 12.Б.')
+                            bot.send_message(message.chat.id, text='Указание: рекомендуется решать задачи в указанном порядке. Обратите внимание, что в задачах 5.4, 5.6, 6 нужно получить не одну, а две интервальные оценки - одну с помощью первого (линейного) приближения, а вторую - с помощью второго (квадратичного).')
                     elif call.data == 'week012':
-                            bot.send_message(message.chat.id, text='задание')
+                          bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 6 по 12 число')
+                          bot.send_message(message.chat.id, text='Уважаемые студенты, высылаю задание для самостоятельной работы после семинара 12.')
+                          bot.send_message(message.chat.id, text='Тема "Графики 2, асимптоты" (старый номер 12).')
+                          bot.send_message(message.chat.id, text='Тема 12: решить задачи 2.4, 3.6, 4.6-7, 6.1, 6.5-7, 7.7-8, 8.4-6, 9.3-4. Указание: кроме наклонных асимптот в каждой задаче также обязательно надо найти и вертикальные асимптоты или показать, что их нет.')
                     elif call.data == 'week013':
-                            bot.send_message(message.chat.id, text='О задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на чиле')
                     elif call.data == 'week014':
-                            bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='кайфуем')
+
+
+            #Линейная алгебра
+
 
                     elif call.data == 'week021':
-                        bot.send_message(message.chat.id, text='Задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 1 по 5 число')
+                        bot.send_message(message.chat.id, text='Дорогие студенты, Домашнее задание на завтрашний семинар:4.62, 65, 71, 73, 79, Проскуряков 1366, 1372')
+                        bot.send_message(message.chat.id, text='Записи сегодняшних семинаров: группа 211 https://youtu.be/tavIWHx8lSY , группа 212 https://youtu.be/_6tqS1M8yUg')
                     elif call.data == 'week022':
-                        bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 6 по 12 число')
+                        bot.send_message(message.chat.id,
+                                         text='Дорогие студенты, Домашнее задание на следующий семинар: Проскуряков 1367, Ефимов Демидович 4.186, 213, 216')
+                        bot.send_message(message.chat.id,
+                                         text='Записи сегодняшних семинаров: группа 211 https://youtu.be/BJqWFKwjWzo , группа 212 https://youtu.be/7inynXtwBJE')
                     elif call.data == 'week023':
-                        bot.send_message(message.chat.id, text='О задание')
+
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на чиле')
                     elif call.data == 'week024':
-                        bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='кайфуем')
 
+            #Дискретная матемтаика
                     elif call.data == 'week031':
-                        bot.send_message(message.chat.id, text='Задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 1 по 5 число')
+                        bot.send_message(message.chat.id, text='Домашнее задание 288, 292, 296, 283, 271.')
                     elif call.data == 'week032':
-                        bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='кайфуем')
                     elif call.data == 'week033':
-                        bot.send_message(message.chat.id, text='О задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на расслабоне')
                     elif call.data == 'week034':
-                        bot.send_message(message.chat.id, text='задание')
-
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на чиле')
+            #Микроэконмика
                     elif call.data == 'week041':
-                        bot.send_message(message.chat.id, text='Задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 1 по 5 число')
+                        bot.send_message(message.chat.id, text='В среду будет мкр9 на монополию. Несколько маленьких задачек в сокративе (решать не на листочке). Я вам очень советую самостоятельно посмотреть и порешать задачи семинара 11, особенно пкрвые легкие. На семинаре все не успеем разобрать, потому что их много')
                     elif call.data == 'week042':
-                        bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 6 по 12 число')
+                        bot.send_message(message.chat.id, text='1. Завтра обсуждаем олигополию и кейсы из семинара 11. ВАЖНО! Изучите кейсы до семинара. На самом семинаре будете объяснять вы, а не, ответы на кейсы. Иначе просто помолчим дружно.')
+                        bot.send_message(message.chat.id, text='2. Посмотрите лекцию «рынки с монопольной властью 2». Олигополия - сложная тема. Поэтому без базы будет сложно понять на семинаре.')
+                        bot.send_message(message.chat.id, text='3. ‼️11.12 (в эту субботу) будет тестовая контрольная. По ее формату скажу позже (говорилось и на лекции). Это 10% от оценки. ')
+                        bot.send_message(message.chat.id, text='4. До 16.12 надо сделать ИДЗ2 - анализ статьи. Критерии и что надо сделать смотрите в тимсе в файлах')
                     elif call.data == 'week043':
-                        bot.send_message(message.chat.id, text='О задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='кайфуем')
                     elif call.data == 'week044':
-                        bot.send_message(message.chat.id, text='задание')
-
-
-
-
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на чиле')
+            #ВБИ
                     elif call.data == 'week051':
-                        bot.send_message(message.chat.id, text='Задание')
+                        bot.send_message(message.chat.id, text='Хорошо, вот дз за неделю с 1 по 5 число')
+                        bot.send_message(message.chat.id, text='Домашнее задание:')
+                        bot.send_message(message.chat.id, text='Проектное задание')
+                        bot.send_message(message.chat.id, text='1)Доработать MVP продукта. Если MVP готово или по MVP получены незначительные замечания, которые можно быстро доработать, то приступить к следующей функции (фиче) продукта.')
+                        bot.send_message(message.chat.id, text='2)Описать процесс запуска MVP вашего продукта с помощью диаграммы Ганта.')
+                        bot.send_message(message.chat.id, text='3)Заполнить таблицу по неделе 5 (Этап 5. Доработка продукта). Указать ссылки на доработанные задачи по каждой роли.')
+                        bot.send_message(message.chat.id, text='Индивидуальное задание')
+                        bot.send_message(message.chat.id, text='1)Для каждой модели ЖЦ (каскадная, гибкая, микс) привести по 2 примера сервисов/продуктов/ИС. Дать обоснование, почему для данного продукта подходит именно данная модель.')
+                        bot.send_message(message.chat.id, text='2)Подготовиться к проверочной работе по учебнику Зараменских Е.П. «Основы бизнес-информатики» (главы 1-4)')
+
+
+
+
                     elif call.data == 'week052':
-                        bot.send_message(message.chat.id, text='задание')
+
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='кайфуем')
                     elif call.data == 'week053':
-                        bot.send_message(message.chat.id, text='О задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на расслабоне')
                     elif call.data == 'week054':
-                        bot.send_message(message.chat.id, text='задание')
+                        bot.send_message(message.chat.id, text='Домашнего задания пока нет')
+                        bot.send_message(message.chat.id, text='пока на чиле')
                     if call.data == 'sub1':
 
                         menu1 = telebot.types.InlineKeyboardMarkup()
@@ -156,7 +204,7 @@ def bot_message(message):
                         menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week13'))
                         menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week14'))
 
-                        bot.send_message(message.chat.id, text='Окей, выберите дату', reply_markup=menu1)
+                        bot.send_message(message.chat.id, text='Окей, выберите учебный перод текущего месяца', reply_markup=menu1)
 
                     elif call.data == 'week11':
                         bot.send_message(message.chat.id, text='Отравьте новое задание')
@@ -174,7 +222,7 @@ def bot_message(message):
                         menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week23'))
                         menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week24'))
 
-                        bot.send_message(message.chat.id, text='Окей, выберите дату', reply_markup=menu1)
+                        bot.send_message(message.chat.id, text='Окей, выберите учебный перод текущего месяца', reply_markup=menu1)
 
                     elif call.data == 'week21':
                         bot.send_message(message.chat.id, text='Отравьте новое задание')
@@ -192,7 +240,7 @@ def bot_message(message):
                         menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week33'))
                         menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week34'))
 
-                        bot.send_message(message.chat.id, text='Окей, выберите дату', reply_markup=menu1)
+                        bot.send_message(message.chat.id, text='Окей, выберите учебный перод текущего месяца', reply_markup=menu1)
 
                     elif call.data == 'week31':
                         bot.send_message(message.chat.id, text='Отравьте новое задание')
@@ -210,7 +258,7 @@ def bot_message(message):
                         menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week43'))
                         menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week44'))
 
-                        bot.send_message(message.chat.id, text='Окей, выберите дату', reply_markup=menu1)
+                        bot.send_message(message.chat.id, text='Окей, выберите учебный перод текущего месяца', reply_markup=menu1)
 
                     elif call.data == 'week41':
                         bot.send_message(message.chat.id, text='Отравьте новое задание')
@@ -228,7 +276,7 @@ def bot_message(message):
                         menu1.add(telebot.types.InlineKeyboardButton(text='13-19', callback_data='week3'))
                         menu1.add(telebot.types.InlineKeyboardButton(text='20-26', callback_data='week4'))
 
-                        bot.send_message(message.chat.id, text='Окей, выберите дату', reply_markup=menu1)
+                        bot.send_message(message.chat.id, text='Окей, выберите учебный перод текущего месяца', reply_markup=menu1)
 
                     elif call.data == 'week51':
                         bot.send_message(message.chat.id, text='Отравьте новое задание')
