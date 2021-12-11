@@ -21,58 +21,25 @@ def start(message):
 
     bot.send_message(message.chat.id, 'Привет, {0.first_name}'.format(message.from_user), reply_markup=markup)
 
-@bot.message_handler(func=lambda message: True, commands=['offer'])
+@bot.message_handler(commands=['offer'])
 def offer(message):
                 bot.send_message(message.chat.id, 'https://docs.google.com/document/d/1sCFEOdPUJ8nYUaAwCFf7Jcv1iJ4kYGcZsrRITx-veww/edit?usp=sharing')
 
-@bot.message_handler(func=lambda message: True, commands=['pdp'])
+@bot.message_handler(commands=['pdp'])
 def pdp(message):
                 bot.send_message(message.chat.id, 'https://docs.google.com/document/d/1yy5k-j_cJ5419QRJxZHLSZlO2uyZ4e7MGlNfuEzlKnI/edit?usp=sharing')
 
-@bot.message_handler(func=lambda message: True, commands=['lecturers'])
+@bot.message_handler(commands=['lecturers'])
 def lecturers(message):
-    menu0 = telebot.types.InlineKeyboardMarkup()
-    menu0.add(telebot.types.InlineKeyboardButton(text='Математеический Анализ', callback_data='sub1'))
-    menu0.add(telebot.types.InlineKeyboardButton(text='Линейная Алгебра', callback_data='sub2'))
-    menu0.add(telebot.types.InlineKeyboardButton(text='Дискретная Математика', callback_data='sub3'))
-    menu0.add(telebot.types.InlineKeyboardButton(text='Микроэкономика', callback_data='sub4'))
-    menu0.add(telebot.types.InlineKeyboardButton(text='Введение в бизнес-информатику', callback_data='sub5'))
+    menu = telebot.types.InlineKeyboardMarkup()
+    menu.add(telebot.types.InlineKeyboardButton(text='Математеический Aнализ', callback_data='sub01'))
+    menu.add(telebot.types.InlineKeyboardButton(text='Линейная Aлгебра', callback_data='sub02'))
+    menu.add(telebot.types.InlineKeyboardButton(text='Дискретная Математика', callback_data='sub03'))
+    menu.add(telebot.types.InlineKeyboardButton(text='Микроэкономика', callback_data='sub04'))
+    menu.add(telebot.types.InlineKeyboardButton(text='Введение в бизнес-информатику', callback_data='sub05'))
 
-    bot.send_message(message.chat.id, text='Выберите предмет', reply_markup=menu0)
+    bot.send_message(message.chat.id, text='Выберите предмет', reply_markup=menu)
 
-    @bot.callback_query_handler(func=lambda call: True)
-    def step1(call):
-        # Математический анализ
-        if call.data == 'sub1':
-            bot.send_message(call.message.chat.id, text='Математический анализ')
-            bot.send_message(call.message.chat.id, text='Субочев Андрей Николаевич')
-            bot.send_message(call.message.chat.id, text='asubochev@hse.ru')
-        if call.data == 'sub2':
-            bot.send_message(call.message.chat.id, text='Линейная Алгебра')
-            bot.send_message(call.message.chat.id, text='Широ́ков Дмитрий Сергеевич')
-            bot.send_message(call.message.chat.id, text='dshirokov@hse.ru, dm.shirokov@gmail.com')
-            bot.send_message(call.message.chat.id, text='Швыдун Сергей Владимирович')
-            bot.send_message(call.message.chat.id, text='shvydun@hse.ru')
-        if call.data == 'sub3':
-            bot.send_message(call.message.chat.id, text='Дискретная Математика')
-            bot.send_message(call.message.chat.id, text='Шварц Дмитрий Александрович')
-            bot.send_message(call.message.chat.id, text='dshvarts@hse.ru')
-            bot.send_message(call.message.chat.id, text='Са́ночкин Юрий Ильич')
-            bot.send_message(call.message.chat.id, text='ysanochkin@hse.ru')
-        if call.data == 'sub4':
-            bot.send_message(call.message.chat.id, text='Микроэкономика')
-            bot.send_message(call.message.chat.id, text='Аносова Анна Витальевна')
-            bot.send_message(call.message.chat.id, text='aanosova@hse.ru')
-            bot.send_message(call.message.chat.id, text='Кононова Наталия Вадимовна')
-            bot.send_message(call.message.chat.id, text='nvkononova@hse.ru')
-        if call.data == 'sub5':
-            bot.send_message(call.message.chat.id, text='Введение в бизнес-информатику')
-            bot.send_message(call.message.chat.id, text='Зараменских Евгений Петрович')
-            bot.send_message(call.message.chat.id, text='ezaramenskikh@hse.ru')
-            bot.send_message(call.message.chat.id, text='Ефимов Андрей Евгеньевич')
-            bot.send_message(call.message.chat.id, text='aeefimov@hse.ru')
-            bot.send_message(call.message.chat.id, text='Давыденко Елизавета Алексеевна')
-            bot.send_message(call.message.chat.id, text='edavydenko@hse.ru')
 
 @bot.message_handler(func=lambda message: True, commands=['stoffice'])
 def pdp(message):
@@ -83,6 +50,18 @@ def pdp(message):
                 bot.send_message(message.chat.id, 'Гусева Мария Григорьевна')
                 bot.send_message(message.chat.id, 'mgguseva@hse.ru')
                 bot.send_message(message.chat.id, '+7 (495) 772-95-90 * 28314')
+
+
+@bot.message_handler(func=lambda message: True, commands=['seminars'])
+def pdp(message):
+    menu = telebot.types.InlineKeyboardMarkup()
+
+    menu.add(telebot.types.InlineKeyboardButton(text='Линейная Aлгебра', callback_data='sub12'))
+    menu.add(telebot.types.InlineKeyboardButton(text='Дискретная Математика', callback_data='sub13'))
+
+
+    bot.send_message(message.chat.id, text='Выберите предмет', reply_markup=menu)
+
 
 @bot.message_handler(func=lambda message: message.chat.id not in users_start, commands=['redactor_mode'])
 def not_admin(message):
@@ -349,6 +328,55 @@ def bot_message(message):
                         bot.send_message(call.message.chat.id, text='Отравьте новое задание')
                     elif call.data == 'week54':
                         bot.send_message(call.message.chat.id, text='Отравьте новое задание')
+
+                    elif call.data == 'sub01':
+                        bot.send_message(call.message.chat.id, text='Математический анализ')
+                        bot.send_message(call.message.chat.id, text='Субочев Андрей Николаевич')
+                        bot.send_message(call.message.chat.id, text='asubochev@hse.ru')
+                    elif call.data == 'sub02':
+                        bot.send_message(call.message.chat.id, text='Линейная Алгебра')
+                        bot.send_message(call.message.chat.id, text='Широ́ков Дмитрий Сергеевич')
+                        bot.send_message(call.message.chat.id, text='dshirokov@hse.ru, dm.shirokov@gmail.com')
+
+                        bot.send_message(call.message.chat.id, text='Швыдун Сергей Владимирович')
+                        bot.send_message(call.message.chat.id, text='shvydun@hse.ru')
+                    elif call.data == 'sub03':
+                        bot.send_message(call.message.chat.id, text='Дискретная Математика')
+                        bot.send_message(call.message.chat.id, text='Шварц Дмитрий Александрович')
+                        bot.send_message(call.message.chat.id, text='dshvarts@hse.ru')
+                        bot.send_message(call.message.chat.id, text='Са́ночкин Юрий Ильич')
+                        bot.send_message(call.message.chat.id, text='ysanochkin@hse.ru')
+
+
+                    elif call.data == 'sub04':
+                        bot.send_message(call.message.chat.id, text='Микроэкономика')
+                        bot.send_message(call.message.chat.id, text='Аносова Анна Витальевна')
+                        bot.send_message(call.message.chat.id, text='aanosova@hse.ru')
+                        bot.send_message(call.message.chat.id, text='Кононова Наталия Вадимовна')
+                        bot.send_message(call.message.chat.id, text='nvkononova@hse.ru')
+                    elif call.data == 'sub05':
+                        bot.send_message(call.message.chat.id, text='Введение в бизнес-информатику')
+                        bot.send_message(call.message.chat.id, text='Зараменских Евгений Петрович')
+                        bot.send_message(call.message.chat.id, text='ezaramenskikh@hse.ru')
+                        bot.send_message(call.message.chat.id, text='Ефимов Андрей Евгеньевич')
+                        bot.send_message(call.message.chat.id, text='aeefimov@hse.ru')
+                        bot.send_message(call.message.chat.id, text='Давыденко Елизавета Алексеевна')
+                        bot.send_message(call.message.chat.id, text='edavydenko@hse.ru')
+
+                    elif call.data == 'sub12':
+                        bot.send_message(call.message.chat.id, text='Линейная Алгебра')
+                        bot.send_message(call.message.chat.id, text='Семинары Широкова Д.С.')
+                        bot.send_message(call.message.chat.id,
+                                         text='https://us02web.zoom.us/j/84287044609?pwd=Nzl3aDJYR1JvUFJNU2NSc1hOaGtIdz09#success')
+
+                    elif call.data == 'sub13':
+                        bot.send_message(call.message.chat.id, text='Дискретная Математика')
+                        bot.send_message(call.message.chat.id, text='Семинары Шварца Д.А.')
+                        bot.send_message(call.message.chat.id, text='код:520892')
+                        bot.send_message(call.message.chat.id, text='https://us02web.zoom.us/j/86342035424#success')
+                        bot.send_message(call.message.chat.id, text='Семинары Саночкина Ю.И.')
+                        bot.send_message(call.message.chat.id, text='код:803036')
+                        bot.send_message(call.message.chat.id, text='https://us02web.zoom.us/j/82382877097#success')
 
 
 bot.polling(none_stop=True)
